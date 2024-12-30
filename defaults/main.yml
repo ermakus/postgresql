@@ -6,6 +6,7 @@ postgresql_version_terse: "{{ postgresql_version | replace('.', '') }}"  # Short
 postgresql_encoding: "UTF-8"
 postgresql_data_checksums: false
 postgresql_pwfile: ""
+repmgr_primary: True # Default to True to work without repmgr
 
 postgresql_locale_parts:
   - "en_US" # Locale
@@ -39,6 +40,7 @@ postgresql_ext_install_contrib: no
 postgresql_ext_install_dev_headers: no
 postgresql_ext_install_postgis: no
 postgresql_ext_install_extra_packages: no
+postgresql_ext_install_repmgr: no
 
 # PostGIS
 postgresql_postgis_release_compatibility:

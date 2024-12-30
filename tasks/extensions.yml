@@ -8,3 +8,5 @@
   when: postgresql_ext_install_postgis
 - import_tasks: extensions/extra_packages.yml
   when: postgresql_ext_install_extra_packages
+- import_tasks: extensions/repmgr.yml
+  when: postgresql_ext_install_repmgr and ansible_service_mgr == 'systemd'
