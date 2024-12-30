@@ -115,6 +115,7 @@ postgresql_data_directory: "/var/lib/{{ postgresql_varlib_directory_name }}/{{ p
 postgresql_wal_directory: ""
 postgresql_wal_segsize: ""
 postgresql_pid_directory: "/var/run/postgresql"
+postgresql_home_directory: "/var/lib/postgresql"
 # If external_pid_file is not explicitly set, on extra PID file is written
 postgresql_external_pid_file: "{{ postgresql_pid_directory }}/{{ postgresql_version }}-{{ postgresql_cluster_name }}.pid"
 
