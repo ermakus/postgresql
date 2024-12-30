@@ -99,7 +99,7 @@
 
 - name: Repmgr | Ensure postgresql slave is stopped before clone
   service:
-    name: "postgresql-{{postgresql_version}}"
+    name: "postgresql"
     state: stopped
   when: not repmgr_primary and not ansible_hostname in repmgr_cluster_show.stdout and not "standby" in repmgr_cluster_show.stdout
 
@@ -111,7 +111,7 @@
 
 - name: Repmgr | Ensure postgresql slave is running after clone
   service:
-    name: "postgresql-{{postgresql_version}}"
+    name: "postgresql"
     state: started
   when: not repmgr_primary
 
@@ -145,7 +145,7 @@
 
 - name: Repmgr | Ensure crond is running
   service:
-    name: "crond"
+    name: "cron"
     state: started
     enabled: yes
 
